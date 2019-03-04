@@ -7,9 +7,9 @@ function Words({ words }) {
   });
 
   return (
-    <ul>
+    <ol>
       {wordsList}
-    </ul>
+    </ol>
   );
 }
 

@@ -11,6 +11,7 @@ export default function App() {
     <Router>
       <>
         <Switch>
+          <Route path="/words/:count" component={TopWords} />
           <Route path="/" component={TopWords} />
         </Switch>
       </>
