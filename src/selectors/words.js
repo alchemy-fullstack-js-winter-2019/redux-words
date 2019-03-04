@@ -15,13 +15,14 @@ export const getFirstWordsByTerm = (state, count) => {
   }), count);
 };
 
+/* eslint-disable-next-line */
 function selectorPerformance(fn) {
   const start = performance.now();
   const results = fn();
   console.log('PERFORMANCE', performance.now() - start);
   return results;
 }
-
+/* eslint-disable-next-line */
 function badSelector(words, searchTerm) {
   const filtered = [];
   for(let j = 0; j < words.length; j++) {
