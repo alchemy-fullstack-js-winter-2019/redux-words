@@ -18,3 +18,10 @@ function badSelector(words, searchTerm) {
 export const getWords = state => state.words.dictionary;
 
 export const getFirstWords = (state, num) => getWords(state).slice(0, num);
+
+export const getSearchTerm = state => state.words.searchTerm;
+
+export const getTopWordsByTerm = state => {
+  const term = getSearchTerm(state);
+  return getSearchTerm(state).filter(word => word.includes(term));
+};
