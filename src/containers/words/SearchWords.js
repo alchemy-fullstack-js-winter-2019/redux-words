@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import SearchForm from '../../components/words/SearchForm';
 import { getSearchTerm } from '../../selectors/words';
-import { updateSearch } from '../../actions/words';
+import { updateSearchTerm } from '../../actions/words';
 
 const mapStateToProps = state => ({
   term: getSearchTerm(state)
@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   onChange({ target }) {
-    dispatch(updateSearch(target.value));
+    dispatch(updateSearchTerm(target.value));
   }
 });
 

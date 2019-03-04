@@ -1,18 +1,16 @@
 import dictionary from '../fixtures/words.json';
-import { UPDATE_SEARCH_TERM } from '../actions/words';
+import { UPDATE_SEARCH_TERM } from '../actions/words.js';
 
 const initialState = {
-  words: dictionary,
+  dictionary,
   searchTerm: ''
-}
+};
 
 export default function reducer(state = initialState, action) {
   switch(action.type) {
     case UPDATE_SEARCH_TERM:
-      return {
-        words: { ...state, searchTerm: action.payload }
-      };
-    default: 
+      return { ...state, searchTerm: action.payload };
+    default:
       return state;
   }
 }

@@ -1,6 +1,6 @@
 const getSubWords = (arr, count) => arr.slice(0, count);
 
-export const getWords = state => state.words.words;
+export const getWords = state => state.words.dictionary;
 
 export const getFirstWords = (state, count) => {
   return getSubWords(getWords(state), count);

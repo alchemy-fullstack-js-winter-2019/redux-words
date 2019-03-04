@@ -1,6 +1,5 @@
 export const UPDATE_SEARCH_TERM = 'UPDATE_SEARCH_TERM';
-
-export const updateSearch = searchTerm => ({
+export const updateSearchTerm = term => ({
   type: UPDATE_SEARCH_TERM,
-  payload:  searchTerm
+  payload: term
 });

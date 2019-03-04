@@ -4,7 +4,7 @@ import SearchWords from '../../containers/words/SearchWords';
 import TopWords from '../../containers/words/TopWords';
 
 function Searchable() {
-  return (  
+  return (
     <>
       <SearchWords />
       <TopWords />
@@ -17,4 +17,3 @@ Searchable.propTypes = {
 };
 
 export default Searchable;
-
