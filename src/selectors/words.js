@@ -14,3 +14,7 @@ function badSelector(words, searchTerm) {
   }
   return filtered;
 }
+
+export const getWords = state => state.dictionary;
+
+export const getFirstWords = (state, num) => getWords(state).slice(0, num + 1);
