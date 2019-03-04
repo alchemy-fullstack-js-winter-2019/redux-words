@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-import { getFirstWords } from '../selectors/words';
+import { getFirstWordsByTerm } from '../selectors/words';
 import Words from '../components/words/Words';
 
 
 const mapStateToProps = (state, props) => ({
-    words: getFirstWords(state, props.match.params.count || 1000)
+    words: getFirstWordsByTerm(state, props.match.params.count || 1000)
 });
 
 export default connect(
