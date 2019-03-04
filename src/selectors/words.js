@@ -1,11 +1,11 @@
-function selectorPerformance(fn) {
+export function selectorPerformance(fn) {
   const start = performance.now();
   const results = fn();
   console.log('PERFORMANCE', performance.now() - start);
   return results;
 }
 
-function badSelector(words, searchTerm) {
+export function badSelector(words, searchTerm) {
   const filtered = [];
   for(let j = 0; j < words.length; j++) {
     if(!filtered.some(w => w === words[j]) && words[j].includes(searchTerm)) {
@@ -14,3 +14,12 @@ function badSelector(words, searchTerm) {
   }
   return filtered;
 }
+
+export const getWords = state => {
+  return state.words.dictionary;
+};
+
+export const getFirstWords = (state, numberOfWords) => {
+  const words = getWords(state);
+  return words.slice(0, numberOfWords);
+};
