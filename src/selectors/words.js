@@ -21,7 +21,9 @@ export const getFirstWords = (state, num) => getWords(state).slice(0, num);
 
 export const getSearchTerm = state => state.words.searchTerm;
 
-export const getTopWordsByTerm = state => {
+export const getTopWordsByTerm = (state, count) => {
   const term = getSearchTerm(state);
-  return getSearchTerm(state).filter(word => word.includes(term));
+  return getWords(state)
+    .filter(word => word.includes(term))
+    .slice(0, count);
 };
