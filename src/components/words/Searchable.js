@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import SearchWords from '../../containers/words/SearchWords';
 import TopWords from '../../containers/words/TopWords';
 
-function Searchable({ match }) {
+function Searchable() {
   return (
     <>
       <SearchWords />
-      <TopWords match={match}/>
+      <TopWords />
     </>
   );
 }

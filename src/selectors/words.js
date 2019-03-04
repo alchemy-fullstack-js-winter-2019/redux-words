@@ -1,16 +1,18 @@
+const getSubWords = (arr, count) => arr.slice(0, count);
+
 export const getWords = state => state.words.dictionary;
 
 export const getFirstWords = (state, count) => {
-  return getWords(state).slice(0, count);
+  return getSubWords(getWords(state), count);
 };
 
 export const getSearchTerm = state => state.words.searchTerm;
 
 export const getTopWordsByTerm = (state, count) => {
   const searchTerm = getSearchTerm(state);
-  return getWords(state).filter(word => {
+  return getSubWords(getWords(state).filter(word => {
     return word.includes(searchTerm);
-  }).slice(0, count);
+  }), count);
 };
 
 // function selectorPerformance(fn) {
