@@ -1,6 +1,7 @@
 import React from 'react';
-import TopWords from '../words/TopWords';
+import TopWords from '../../containers/words/TopWords';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Searchable from '../words/Searchable';
 
 export default function App() {
   return (
@@ -8,8 +9,8 @@ export default function App() {
       <h1>Hello</h1>
       <Router>
         <Switch>
-          <Route exact to="/" component={TopWords} />
-          <Route exact to="/words/:count" component={TopWords} />
+          <Route exact path="/" component={TopWords} />
+          <Route path="/words/:count" component={Searchable} />
         </Switch>
       </Router>
     </>
