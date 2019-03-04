@@ -12,9 +12,10 @@ const Words = ({ words }) => {
   });
 
   return (
-    <ol>
-      {listOfWords}
-    </ol>
+    < >
+    <ol>{listOfWords}</ol>
+    {listOfWords.length < 1 && <p>no results</p>}
+    </>
   );
 };
 
