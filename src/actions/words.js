@@ -1,6 +1,6 @@
-export const CREATE_WORDS = 'CREATE_WORDS';
+export const UPDATE_SEARCH_TERM = 'UPDATE_SEARCH_TERM';
 
-export const updateDocument = word => ({
-  type: CREATE_WORDS,
-  payload:  word
+export const updateSearch = searchTerm => ({
+  type: UPDATE_SEARCH_TERM,
+  payload:  searchTerm
 });

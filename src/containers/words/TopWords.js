@@ -1,14 +1,13 @@
-import { connect } from 'react-redux';
-import Words from '../../components/words/Words';
-import { getFirstWords } from '../../selectors/words';
-// import { createWords } from '../../actions/words';
 
-const mapStateProps = state => ({
-  words: getFirstWords(state, 1000)
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import Words from '../../components/words/Words';
+import { getFirstWordsByTerm } from '../../selectors/words';
+
+const mapStateToProps = (state, props) => ({
+  words: getFirstWordsByTerm(state, props.match.params.count || 1000)
 });
 
-const WordContainer = connect(
-  mapStateProps,
-)(Words);  
-
-export default WordContainer;
+export default withRouter(connect(
+  mapStateToProps
+)(Words));
