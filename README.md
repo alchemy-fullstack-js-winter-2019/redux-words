@@ -7,7 +7,7 @@ The goal is to create a page that displays the first 1000 words from `src/fixtur
     a property called dictionary
 * create a `src/reducers/index.js` file
   * use `combineReducer` with your words reducer
-* import your reducer from `src/reducres/index.js` into your store
+* import your reducer from `src/reducers/index.js` into your store
 * create a `src/components/words/Words.js` file
   * `Words` should display a list of words
 * create a `src/containers/words/TopWords.js`
@@ -17,7 +17,7 @@ The goal is to create a page that displays the first 1000 words from `src/fixtur
       * create a `getFirstWords` selector that takes state and the number of words to fetch
         it should reuse the `getWords` selector
 * return words by route
-  * add `react-routre-dom` to `src/components/app/App.js`
+  * add `react-router-dom` to `src/components/app/App.js`
   * add a route for `/` that displays the first 1000 words
   * add a route from `/words/:count` that displays the first `count` words
     * reuse the `TopWords` component
