@@ -18,5 +18,13 @@
 export const getWords = state => state.words.dictionary;
 
 export const getFirstWords = (state, numWords) => {
-  return getWords(state).splice(0, numWords);
+  return getWords(state).slice(0, numWords);
+};
+
+export const getSearchTerm = state => state.words.searchTerm;
+
+export const getTopWordsByTerm = (state, numWords) => {
+  return getWords(state)
+    .filter(word => word.includes(getSearchTerm(state)))
+    .slice(0, numWords);
 };

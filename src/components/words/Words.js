@@ -12,9 +12,9 @@ const Words = ({ words }) => {
   });
 
   return (
-    <ul>
+    <ol>
       {listOfWords}
-    </ul>
+    </ol>
   );
 };
 
