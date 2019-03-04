@@ -1,14 +1,14 @@
 import React from 'react';
-import TopWords from '../../containers/words/TopWords';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Searchable from '../../components/words/Searchable';
 
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 export default function App() {
-  return(
+  return (
     <Router>
-      <>
-      <Route exact path='/' component={TopWords}/>
-      <Route exact path='/words/:count' component={TopWords}/>
-      </>
+      <Switch>
+        <Route exact path='/' component={Searchable}/>
+        <Route exact path='/words/:count' component={Searchable}/>
+      </Switch>
     </Router>
   );
 }
