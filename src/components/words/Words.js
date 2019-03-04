@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function WordsDisplay({ words }) {
-  const listOfWords = words.map(word=> {
-    return <li key={words}>{word}</li>;
+function Words({ words }) {
+  const listOfWords = words.map(word => {
+    return <li key={word}>{word}</li>;
   });
   
   return (
@@ -15,8 +15,8 @@ function WordsDisplay({ words }) {
   );
 }
 
-WordsDisplay.propTypes = {
+Words.propTypes = {
   words: PropTypes.array,
 };
 
-export default WordsDisplay;
+export default Words;
