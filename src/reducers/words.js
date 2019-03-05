@@ -3,7 +3,7 @@ import { UPDATE_SEARCH_TERM, UPDATE_WORD_COLOR, UPDATE_BACKGROUND_COLOR } from '
 
 const initialState = {
   dictionary,
-  searchTerm: '',
+  searchTerm: 'x',
   wordColor: '#008000',
   backgroundColor: '#FFFF00'
 };
