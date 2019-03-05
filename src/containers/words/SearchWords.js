@@ -1,38 +1,42 @@
 import { connect } from 'react-redux';
 import React, { PureComponent } from 'react';
+import { withRouter } from 'react-router-dom';
+import qs from 'querystring';
 import SearchForm from '../../components/words/SearchForm';
 import { updateSearchTerm, updateColor } from '../../actions/words';
 import { getSearchTerm, getColor } from '../../selectors/words';
 import PropTypes from 'prop-types';
-import store from '../../store';
 
 class SearchWords extends PureComponent {
   static propTypes = {
     term: PropTypes.string.isRequired,
-    color: PropTypes.string.isRequired,
-    onChange: PropTypes.func.isRequired
+    location: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired,
+    updateSearchTerm: PropTypes.func.isRequired
   };
 
   componentDidMount() {
-    store.dispatch(updateSearchTerm(this.props.term));
-    store.dispatch(updateColor(this.props.color));
+    const { term } = qs.parse(this.props.location.search.slice(1));
+    this.props.updateSearchTerm(term);
+    // store.dispatch(updateColor(this.props.color));
+  }
+
+  componentDidUpdate(prevProps) {
+    if(prevProps.term !== this.props.term) {
+      const { pathname } = this.props.location;
+      const search = qs.stringify({ term: this.props.term });
+      this.props.history.push(`${pathname}?${search}`);
+    }
   }
 
   render(){
-    return (
-      <SearchForm
-        term={this.props.term}
-        color={this.props.color}
-        onChange={this.props.onChange}
-      />
-    );
+    return <SearchForm {...this.props} />;
   }
 }
 
-const searchQuery = location.search.split('=').slice(1).join('');
 const mapStateToProps = state => ({
-  term: searchQuery || getSearchTerm(state),
-  color: searchQuery || getColor(state)
+  term:  getSearchTerm(state),
+  color: getColor(state)
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -42,10 +46,13 @@ const mapDispatchToProps = dispatch => ({
       color: updateColor
     };
     dispatch(factoryMethod[target.name](target.value));
+  },
+  updateSearchTerm(term) {
+    dispatch(updateSearchTerm(term));
   }
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SearchWords);
+)(withRouter(SearchWords));
