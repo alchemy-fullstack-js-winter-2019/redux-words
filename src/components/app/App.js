@@ -12,11 +12,8 @@ export default function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={TopWords} />
-          <Route path="/words/:count" component={Searchable} />
+          <Route exact path="/words/:count" component={Searchable} />
         </Switch>
       </Router>
     );
- 
-  
 }
-

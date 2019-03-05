@@ -18,6 +18,3 @@ Words.propTypes = {
 };
 
  export default Words;
-
-
-
