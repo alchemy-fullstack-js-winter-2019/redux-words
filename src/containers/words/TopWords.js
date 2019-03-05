@@ -4,7 +4,7 @@ import { getTopWordsByTerm, getWordColor, getBackgroundColor } from '../../selec
 import Words from '../../components/words/Words';
 
 const mapStateToProps = (state, props) => {
-  console.log('backgroundColor', getBackgroundColor(state));
+  console.log('words', state.words.dictionary);
   return {
     words: getTopWordsByTerm(state, props.match.params.count || 1000),
     wordColor: getWordColor(state),

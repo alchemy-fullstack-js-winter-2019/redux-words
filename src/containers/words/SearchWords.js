@@ -20,7 +20,9 @@ class SearchWords extends PureComponent {
 
   componentDidMount() {
     const { term } = queryString.parse(this.props.location.search.slice(1));
-    this.props.updateSearchTerm(term);
+    if(term) {
+      this.props.updateSearchTerm(term);
+    }
   }
 
   componentDidUpdate(prevProps) {
