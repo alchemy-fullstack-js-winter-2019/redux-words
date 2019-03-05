@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Words({ words }) {
+function Words({ words, wordColor }) {
   const wordList = words.map((word, i)=> {
-    return <li key={i}>{word}</li>;
+    return <li style={{ color: wordColor }} key={i}>{word}</li>;
   });
   return (
     <ul>
@@ -13,7 +13,8 @@ function Words({ words }) {
 }
 
 Words.propTypes = {
-  words: PropTypes.array.isRequired
+  words: PropTypes.array.isRequired,
+  wordColor: PropTypes.string.isRequired
 };
 
 export default Words;
