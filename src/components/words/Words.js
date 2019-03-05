@@ -8,7 +8,7 @@ export function Words({ words }) {
 
     return (
         <>
-        <h3>Hello form the words list component</h3>
+            <h3>Hello form the words list component</h3>
         <ul>
             {list}
         </ul>
