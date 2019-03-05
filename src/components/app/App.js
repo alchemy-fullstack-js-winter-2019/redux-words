@@ -13,7 +13,7 @@ export default function App() {
     <Router>
       <Switch>
         <Route exact path={'/'} component={TopWords} />
-        <Route exact path={'/words/:count'} component={TopWords} />
+        <Route exact path={'/words/:count'} component={Searchable} />
         <Route exact path={'/search'} component={Searchable} />
         <Redirect to={'/'} />
       </Switch>

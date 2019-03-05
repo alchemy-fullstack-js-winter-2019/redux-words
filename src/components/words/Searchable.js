@@ -2,21 +2,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SearchWords from '../../containers/words/SearchWords';
 import TopWords from '../../containers/words/TopWords';
-/*
-this combines the SearchWords and TopWords containers
-Use this for the /words/:count route
-*/
-const Searchable = ({ match }) => {
+import queryString from 'query-string';
+
+const params = queryString.parse(location.search);
+// eslint-disable-next-line
+console.log(params.searchTerm); // this is the searchTerm in pathname
+
+// eslint-disable-next-line
+const Searchable = ({ location, match }) => {
   return (
     < >
-      <SearchWords/>
+      <SearchWords />
       <TopWords match={match}/>
     </>
   );
 };
 
 Searchable.propTypes = {
-  match: PropTypes.object.isRequired
+  match: PropTypes.object.isRequired,
+  location: PropTypes.object
 };
 
 export default Searchable;
