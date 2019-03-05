@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export default function SearchTerm({ term, onChange }) {
-  <input type='text' name='searchTerm' value={term} onChang={onChange} />;
+  return (
+    <input type='text' name='searchTerm' value={term} onChange={onChange} />
+  );
 }
 
-SearchTerm.PropTypes = {
+SearchTerm.propTypes = {
   term: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired
 };
