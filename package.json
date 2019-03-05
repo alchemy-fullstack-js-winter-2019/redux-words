@@ -4,8 +4,10 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest --verbose",
-    "test:watch": "npm run test -- --watch",
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "jest --verbose --passWithNoTests",
+    "test:watch": "npm run test -- --watch --updateSnapshot",
     "start": "webpack-dev-server --hot --mode development --devtool eval-source-map",
     "build": "webpack -p"
   },
@@ -20,6 +22,7 @@
   "license": "ISC",
   "dependencies": {
     "normalize.css": "^8.0.1",
+    "query-string": "^6.3.0",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-redux": "^6.0.1",
