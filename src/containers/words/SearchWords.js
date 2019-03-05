@@ -15,6 +15,7 @@ class SearchWords extends PureComponent {
 
   componentDidMount() {
     store.dispatch(updateSearchTerm(this.props.term));
+    store.dispatch(updateColor(this.props.color));
   }
 
   render(){
@@ -31,7 +32,7 @@ class SearchWords extends PureComponent {
 const searchQuery = location.search.split('=').slice(1).join('');
 const mapStateToProps = state => ({
   term: searchQuery || getSearchTerm(state),
-  color: getColor(state)
+  color: searchQuery || getColor(state)
 });
 
 const mapDispatchToProps = dispatch => ({
