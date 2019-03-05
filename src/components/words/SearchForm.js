@@ -15,7 +15,7 @@ SearchForm.propTypes = {
   searchTerm: PropTypes.string.isRequired,
   wordColor: PropTypes.string.isRequired,
   backgroundColor: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired
 };
 
 export default SearchForm;
