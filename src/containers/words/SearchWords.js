@@ -1,11 +1,21 @@
 import { connect } from 'react-redux';
-import Words from '../../components/words/Words';
-import { getFirstWords } from '../../selectors/words';
+import SearchForm from '../../components/words/SearchForm';
+import { getSearchTerm } from '../../selectors/words';
+import { updateSearchTerm } from '../../actions/words';
 
-const mapStateToProps = (state, props) => ({
-  words: getFirstWords(state, props.match.params.count || 1000)
+
+
+const mapStateToProps = (state) => ({
+  term: getSearchTerm(state)
+});
+
+const mapDispatchToProps = dispatch => ({
+  onChange({ target }) {
+    dispatch(updateSearchTerm(target.value));
+  }
 });
 
 export default connect(
-  mapStateToProps
-)(searchTerm);
+  mapStateToProps,
+  mapDispatchToProps
+)(SearchForm);
