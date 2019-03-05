@@ -1,30 +1,33 @@
-import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { getSearchTerm } from '../../selectors/words';
 import SearchForm from '../../components/words/SearchForm';
 import { updateSearchTerm } from '../../actions/words/Words';
-import queryString from 'query-string';
 import { withRouter } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
-//:count?searchTerm=hi
-class SearchWords extends PureComponent {
+// The following was an attempt to do the bonus work and bring in the location.search query!
+// I noted it out because it was causing errors since it's unfinished
+// :count?searchTerm=hi
 
-  componentDidMount() {
-    const searchQuery = queryString.parse(this.props.location.search);
-    const term = searchQuery.searchTerm;
-  }
+// import queryString from 'query-string';
+// import React, { PureComponent } from 'react';
+// import PropTypes from 'prop-types';
+// class SearchWords extends PureComponent {
 
-  render() {
-    return (
-      <SearchForm />
-    );
-  }
-}
+//   componentDidMount() {
+//     const searchQuery = queryString.parse(this.props.location.search);
+//     const term = searchQuery.searchTerm;
+//   }
 
-SearchWords.propTypes = {
-  location: PropTypes.object
-};
+//   render() {
+//     return (
+//       <SearchForm />
+//     );
+//   }
+// }
+
+// SearchWords.propTypes = {
+//   location: PropTypes.object
+// };
 
 const mapStateToProps = state => ({
   searchTerm: getSearchTerm(state)
@@ -39,4 +42,4 @@ const mapDispatchToProps = dispatch => ({
 export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(SearchWords));
+)(SearchForm));
