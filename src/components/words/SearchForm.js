@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function SearchForm({ searchTerm, wordColor, backgroundColor, onChange }) {
+  console.log('searchTerm', searchTerm);
   return (
     <>
     <input onChange={onChange} type="text" name="searchTerm" value={searchTerm}></input>

@@ -3,7 +3,6 @@ import { getSearchTerm, getWordColor, getBackgroundColor } from '../../selectors
 import SearchForm from '../../components/words/SearchForm';
 import { updateSearchTerm, updateWordColor, updateBackgroundColor } from '../../actions/words/Words';
 import { withRouter } from 'react-router-dom';
-// import store from '../../store';
 import queryString from 'query-string';
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
@@ -13,7 +12,6 @@ class SearchWords extends PureComponent {
     location: PropTypes.object,
     history: PropTypes.object,
     updateSearchTerm: PropTypes.func,
-
     searchTerm: PropTypes.string,
     wordColor: PropTypes.string,
     backgroundColor: PropTypes.string,
@@ -32,7 +30,7 @@ class SearchWords extends PureComponent {
       this.props.history.push(`${pathname}?${search}`);
     }
   }
-
+  
   render() {
     return (
       <SearchForm {...this.props}/>
@@ -48,6 +46,7 @@ const mapStateToProps = state => ({
   wordColor: getWordColor(state),
   backgroundColor: getBackgroundColor(state)
 });
+
 
 const mapDispatchToProps = dispatch => ({
   onChange({ target }) {

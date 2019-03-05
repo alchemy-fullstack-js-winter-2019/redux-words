@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 
-export const getBackgroundColor = state => state.backgroundColor;
+export const getBackgroundColor = state => state.words.backgroundColor;
 
 export const getWordColor = state => state.words.wordColor;
 
@@ -14,19 +14,19 @@ export const getSearchTerm = state => state.words.searchTerm;
 
 export const getSubWords = (arr, count) => arr.slice(0, count);
 
-// export const getTopWordsByTerm = (state, count) => {
-//   const searchTerm = getSearchTerm(state);
-//   return getSubWords(getWords(state).filter(word => {
-//     return word.includes(searchTerm);
-//   }), count);
-// };
+export const getTopWordsByTerm = (state, count) => {
+  const searchTerm = getSearchTerm(state);
+  return getSubWords(getWords(state).filter(word => {
+    return word.includes(searchTerm);
+  }), count);
+};
 
-export const getTopWordsByTerm = createSelector(
-  getWords, /* first arg to badSelector*/
-  getSearchTerm, /* second arg to badSelector*/
-  (_, count) => count, /* first arg is _ or state(??) - takes count and returns count */
-  badSelector
-);
+// export const getTopWordsByTerm = createSelector(
+//   getWords, /* first arg to badSelector*/
+//   getSearchTerm, /* second arg to badSelector*/
+//   (_, count) => count, /* first arg is _ or state(??) - takes count and returns count */
+//   badSelector
+// );
 
 function selectorPerformance(fn) {
   const start = performance.now();
