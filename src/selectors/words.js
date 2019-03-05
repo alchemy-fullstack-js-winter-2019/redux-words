@@ -15,6 +15,8 @@ export const getTopWordsByTerm = (state, count) => {
   }), count);
 };
 
+export const getColor = state => state.words.color;
+
 // function selectorPerformance(fn) {
 //   const start = performance.now();
 //   const results = fn();
