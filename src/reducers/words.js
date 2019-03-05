@@ -3,7 +3,7 @@ import { UPDATE_SEARCH_TERM, UPDATE_COLOR } from '../actions/words';
 
 const initialState = {
   dictionary,
-  color: 'purple',
+  color: '',
   searchTerm: ''
 };
 
