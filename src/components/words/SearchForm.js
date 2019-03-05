@@ -5,7 +5,7 @@ function SearchForm({ term, onChange }) {
   return (
     <>
     Search:
-    <input type='text' name="searchTerm" value={term} onChange={onChange} />
+    <input name="searchTerm" value={term} onChange={onChange} />
     </>
   );
 }

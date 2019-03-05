@@ -3,10 +3,9 @@ import SearchForm from '../../components/words/SearchForm';
 import { getSearchTerm } from '../../selectors/words';
 import { updateSearchTerm } from '../../actions/words';
 
-const mapStateTopProps = state => ({
+const mapStateToProps = state => ({
   term: getSearchTerm(state)
-})
-;
+});
 
 const mapDispatchToProps = dispatch => ({
   onChange({ target }) {
@@ -15,6 +14,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(
-  mapStateTopProps,
+  mapStateToProps,
   mapDispatchToProps
 )(SearchForm);

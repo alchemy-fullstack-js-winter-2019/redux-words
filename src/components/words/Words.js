@@ -15,7 +15,7 @@ function Words({ words }) {
 }
 
 Words.propTypes = {
-  words: PropTypes.array
+  words: PropTypes.array.isRequired
 };
 
 export default Words;
