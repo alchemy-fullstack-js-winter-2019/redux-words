@@ -4,6 +4,8 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
     "start": "webpack-dev-server --hot --mode development --devtool eval-source-map",
     "build": "webpack -p"
   },
