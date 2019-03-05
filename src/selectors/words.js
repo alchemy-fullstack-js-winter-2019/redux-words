@@ -4,7 +4,7 @@ export const getFirstWords = (state, count) => {
   return getWords(state).slice(0, count);
 };
 
-export const getSearchTerm = state => state.words.searchTerm;
+export const getSearchTerm = state => state.words.term;
 
 export const getColor = state => state.words.color;
 

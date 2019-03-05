@@ -13,5 +13,5 @@ export default function Words({ words, color }) {
 
 Words.propTypes = {
   words: PropTypes.array.isRequired,
-  color: PropTypes.string.isRequired
+  color: PropTypes.string
 };

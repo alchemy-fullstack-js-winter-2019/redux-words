@@ -4,7 +4,7 @@ import { UPDATE_SEARCH_TERM, UPDATE_COLOR } from '../actions/words';
 const initialState = {
   dictionary: dictionary,
   color:  'rgb(255,0,0)',
-  searchTerm: ''
+  term: ''
 };
 
 export default function reducer(state = initialState, action) {
@@ -12,7 +12,7 @@ export default function reducer(state = initialState, action) {
     case UPDATE_SEARCH_TERM:
       return { 
         ...state, 
-        searchTerm: action.payload 
+        term: action.payload 
       };
     case UPDATE_COLOR:
       return { 
