@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import { getSearchTerm, getWordColor } from '../../selectors/words';
+import { getSearchTerm, getWordColor, getBackgroundColor } from '../../selectors/words';
 import SearchForm from '../../components/words/SearchForm';
-import { updateSearchTerm, updateWordColor } from '../../actions/words/Words';
+import { updateSearchTerm, updateWordColor, updateBackgroundColor } from '../../actions/words/Words';
 import { withRouter } from 'react-router-dom';
 import store from '../../store';
 import queryString from 'query-string';
@@ -10,22 +10,23 @@ import PropTypes from 'prop-types';
 
 class SearchWords extends PureComponent {
   static propTypes = {
+    location: PropTypes.object,
     searchTerm: PropTypes.string,
     wordColor: PropTypes.string,
+    backgroundColor: PropTypes.string,
     onChange: PropTypes.func
   };
 
   componentDidMount() {
+    
     store.dispatch(updateSearchTerm(this.props.searchTerm));
+    store.dispatch(updateWordColor(this.props.wordColor));
+    store.dispatch(updateBackgroundColor(this.props.backgroundColor));
   }
 
   render() {
     return (
-      <SearchForm 
-        searchTerm={this.props.searchTerm}
-        wordColor={this.props.wordColor}
-        onChange={this.props.onChange}
-      />
+      <SearchForm {...this.props}/>
     );
   }
 }
@@ -34,15 +35,17 @@ const searchQuery = queryString.parse(location.search);
 const term = searchQuery.searchTerm;
 
 const mapStateToProps = state => ({
-  searchTerm: term || getSearchTerm(state),
-  wordColor: getWordColor(state)
+  searchTerm: getSearchTerm(state) || term,
+  wordColor: getWordColor(state),
+  backgroundColor: getBackgroundColor(state)
 });
 
 const mapDispatchToProps = dispatch => ({
   onChange({ target }) {
     const factoryMethod = {
       searchTerm: updateSearchTerm,
-      wordColor: updateWordColor
+      wordColor: updateWordColor,
+      backgroundColor: updateBackgroundColor
     };
     dispatch(factoryMethod[target.name](target.value));
   }

@@ -9,3 +9,9 @@ export const updateWordColor = wordColor => ({
   type: UPDATE_WORD_COLOR,
   payload: wordColor
 });
+
+export const UPDATE_BACKGROUND_COLOR = 'UPDATE_BACKGROUND_COLOR';
+export const updateBackgroundColor = backgroundColor => ({
+  type: UPDATE_BACKGROUND_COLOR,
+  payload: backgroundColor
+});

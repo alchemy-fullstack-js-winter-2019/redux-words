@@ -1,3 +1,5 @@
+export const getBackgroundColor = state => state.backgroundColor;
+
 export const getWordColor = state => state.words.wordColor;
 
 export const getWords = state => state.words.dictionary;

@@ -14,6 +14,8 @@ export default function App() {
         <Route exact path="/" component={TopWords}></Route>
         <Route path="/words/:count" component={Searchable}></Route>
         <Route path="/words/:count?search=hi" component={Searchable}></Route>
+        <Route path="/words/:count?search=hi?color=#000000" component={Searchable}></Route>
+        <Route path="/words/:count?search=hi?color=#000000?background=#FFFFFF" component={Searchable}></Route>
       </Switch>
     </Router>
   );
