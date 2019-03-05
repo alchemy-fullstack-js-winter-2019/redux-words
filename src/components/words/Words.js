@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function Words({ words }) {
+export default function Words({ words, color }) {
   const listOfWords = words.map(word => {
-    return <li key={word}>{word}</li>;
+    return <li key={word} style={{ color: color }}>{word}</li>;
   });
 
   return (
@@ -12,5 +12,6 @@ export default function Words({ words }) {
 }
 
 Words.propTypes = {
-  words: PropTypes.array.isRequired
+  words: PropTypes.array.isRequired,
+  color: PropTypes.string.isRequired
 };

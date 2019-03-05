@@ -6,6 +6,8 @@ export const getFirstWords = (state, count) => {
 
 export const getSearchTerm = state => state.words.searchTerm;
 
+export const getColor = state => state.words.color;
+
 export const getTopWordsByTerm = (state, count) => {
   const searchTerm = getSearchTerm(state);
   return getWords(state).filter(word => {
