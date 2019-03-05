@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import Words from '../../components/words/Words';
 import { getFirstWordsByTerm } from '../../selectors/words';
 

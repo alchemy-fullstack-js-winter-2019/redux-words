@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function  Words({ words }) {
-  const wordList = words.map(word => 
-    <li key={words}>{words}</li>);
+  console.log('words: ', words);
+  const wordList = words.map((word, i) => 
+    <li key={i}>{word}</li>);
 
     return (
       <ul> 
@@ -11,6 +12,12 @@ function  Words({ words }) {
       </ul>
     );
 }
+
+Words.propTypes = {
+  words: PropTypes.array.isRequired
+};
+
+ export default Words;
 
 
 

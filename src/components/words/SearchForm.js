@@ -8,7 +8,7 @@ function SearchForm({ term, onChange }) {
   );
   }
 
-SearchForm.PropTypes = {
+SearchForm.propTypes = {
     term: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired
   };
