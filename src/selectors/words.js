@@ -28,20 +28,20 @@ export const getTopWordsByTerm = (state, count) => {
 //   badSelector
 // );
 
-function selectorPerformance(fn) {
-  const start = performance.now();
-  const results = fn();
-  console.log('PERFORMANCE', performance.now() - start);
-  return results;
-}
+// function selectorPerformance(fn) {
+//   const start = performance.now();
+//   const results = fn();
+//   console.log('PERFORMANCE', performance.now() - start);
+//   return results;
+// }
             
-function badSelector(words, searchTerm, count) {
-  const filtered = [];
-  for(let j = 0; j < words.length; j++) {
-    if(!filtered.some(w => w === words[j]) && words[j].includes(searchTerm)) {
-      filtered.push(words[j]);
-    }
-  }
-  return getSubWords(filtered, count);
-}
+// function badSelector(words, searchTerm, count) {
+//   const filtered = [];
+//   for(let j = 0; j < words.length; j++) {
+//     if(!filtered.some(w => w === words[j]) && words[j].includes(searchTerm)) {
+//       filtered.push(words[j]);
+//     }
+//   }
+//   return getSubWords(filtered, count);
+// }
 
