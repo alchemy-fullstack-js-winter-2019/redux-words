@@ -4,8 +4,7 @@ import {
   Route,
   Switch } from 'react-router-dom';
 import TopWords from '../../containers/TopWords';
-import SearchWords from '../../containers/SearchWords';
-import Searchable from '../../components/words/Searchable'
+import Searchable from '../../components/words/Searchable';
 
 export default function App() {
   return (

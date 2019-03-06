@@ -7,6 +7,7 @@ const mapPropsToState = state => ({
   searchTerm: getTopWordsByTerm(state)
 }
 );
+
 const mapDispatchToState = dispatch => ({
   onChange({ target }) {
     dispatch(updateSearchTerm(target.value));
