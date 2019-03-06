@@ -9,12 +9,6 @@ export const getFirstWords = (state, count) => {
 };
 export const getSearchTerm = state => state.words.searchTerm;
 
-// export const getFirstWordsByTerm = (state, count) => {
-//   const searchTerm = getSearchTerm(state);
-//   return getSubWords(getWords(state).filter(word => {
-//     return word.includes(searchTerm);
-//   }), count);
-// };
 
 export const getFirstWordsByTerm = createSelector(
   getWords, 
@@ -23,8 +17,9 @@ export const getFirstWordsByTerm = createSelector(
   (_, count) => count,
   badSelector
 );
-export const getColor = state => state.words.color;
 
+export const getColor = state => state.words.color;
+  
 function selectorPerformance(fn) {
   const start = performance.now();
   const results = fn();
@@ -32,7 +27,7 @@ function selectorPerformance(fn) {
   console.log('PERFORMANCE', performance.now() - start);
   return results;
 }
-
+  
 function badSelector(words, searchTerm, count) {
   const filtered = [];
   for(let j = 0; j < words.length; j++) {
@@ -42,3 +37,10 @@ function badSelector(words, searchTerm, count) {
   }
   return getSubWords(filtered, count);
 }
+  
+// export const getFirstWordsByTerm = (state, count) => {
+//   const searchTerm = getSearchTerm(state);
+//   return getSubWords(getWords(state).filter(word => {
+//     return word.includes(searchTerm);
+//   }), count);
+// };
