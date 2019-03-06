@@ -4,6 +4,8 @@ export const getFirstWords = (state, count) => {
   return getWords(state).slice(0, count);
 };
 
+export const getSearchTerm = state => state.words.searchTerm;
+
 function selectorPerformance(fn) {
   const start = performance.now();
   const results = fn();
