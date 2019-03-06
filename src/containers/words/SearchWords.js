@@ -9,13 +9,13 @@ import PropTypes from 'prop-types';
 
 class SearchWords extends PureComponent {
   static propTypes = {
-    location: PropTypes.object,
-    history: PropTypes.object,
-    updateSearchTerm: PropTypes.func,
-    searchTerm: PropTypes.string,
-    wordColor: PropTypes.string,
-    backgroundColor: PropTypes.string,
-    onChange: PropTypes.func
+    location: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired,
+    updateSearchTerm: PropTypes.func.isRequired,
+    searchTerm: PropTypes.string.isRequired
+    // wordColor: PropTypes.string,
+    // backgroundColor: PropTypes.string,
+    // onChange: PropTypes.func
   };
 
   componentDidMount() {
@@ -40,11 +40,8 @@ class SearchWords extends PureComponent {
   }
 }
 
-const searchQuery = queryString.parse(location.search);
-const term = searchQuery.searchTerm;
-
 const mapStateToProps = state => ({
-  searchTerm: getSearchTerm(state) || term,
+  searchTerm: getSearchTerm(state),
   wordColor: getWordColor(state),
   backgroundColor: getBackgroundColor(state)
 });
@@ -54,7 +51,8 @@ const mapDispatchToProps = dispatch => ({
   onChange({ target }) {
     const factoryMethod = {
       wordColor: updateWordColor,
-      backgroundColor: updateBackgroundColor
+      backgroundColor: updateBackgroundColor,
+      searchTerm: updateSearchTerm
     };
     dispatch(factoryMethod[target.name](target.value));
   },
@@ -64,7 +62,7 @@ const mapDispatchToProps = dispatch => ({
 
 });
 
-export default withRouter(connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SearchWords));
+)(withRouter(SearchWords));
