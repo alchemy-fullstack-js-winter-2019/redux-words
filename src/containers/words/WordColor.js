@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { getColor } from '../../selectors/words';
 import { updateColor } from '../../actions/words';
-import ColorPicker from '../../conponents/words/ColorPicker';
+import ColorPicker from '../../components/words/ColorPicker';
 
 const mapStateToProps = state => ({
   color: getColor(state)

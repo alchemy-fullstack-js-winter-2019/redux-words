@@ -1,9 +1,9 @@
 import dictionary from '../fixtures/words.json';
-import { UPDATE_SEARCH_TERM, UPDATE_COLOR } from '../actions/words.js';
+import { UPDATE_SEARCH_TERM, UPDATE_COLOR } from '../actions/words';
 
 const initialState = {
   dictionary,
-  searchTerm: 'a',
+  searchTerm: '',
   color: ''
 };
 
