@@ -4,10 +4,10 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest --verbose",
-    "test:watch": "npm run test -- --watch",
     "start": "webpack-dev-server --hot --mode development --devtool eval-source-map",
-    "build": "webpack -p"
+    "build": "webpack -p",
+    "lint": "eslint .",
+    "pretest": "npm run lint"
   },
   "jest": {
     "moduleNameMapper": {
@@ -24,7 +24,8 @@
     "react-dom": "^16.8.2",
     "react-redux": "^6.0.1",
     "react-router-dom": "^4.3.1",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "reselect": "^4.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.3.3",
