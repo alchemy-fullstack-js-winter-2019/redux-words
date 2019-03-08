@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SearchWords from '../../containers/SearchWords';
+// import SearchWords from '../../containers/SearchWords';
 import TopWords from '../../containers/words/TopWords';
 
 function Searchable({ match }) {
   return (
     <>
-      <SearchWords />
+      {/* <SearchWords /> */}
       <TopWords match={match} />
     </>
   );
