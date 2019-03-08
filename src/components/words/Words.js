@@ -6,15 +6,15 @@ function  Words({ words }) {
   const wordList = words.map((word, i) => 
     <li key={i}>{word}</li>);
 
-    return (
-      <ul> 
-        {wordList}
-      </ul>
-    );
+  return (
+    <ul> 
+      {wordList}
+    </ul>
+  );
 }
 
 Words.propTypes = {
   words: PropTypes.array.isRequired
 };
 
- export default Words;
+export default Words;

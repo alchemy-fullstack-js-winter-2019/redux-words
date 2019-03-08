@@ -9,11 +9,11 @@ import {
 
 export default function App() {
   return (
-      <Router>
-        <Switch>
-          <Route exact path="/" component={TopWords} />
-          <Route exact path="/words/:count" component={Searchable} />
-        </Switch>
-      </Router>
-    );
+    <Router>
+      <Switch>
+        <Route exact path="/" component={TopWords} />
+        <Route exact path="/words/:count" component={Searchable} />
+      </Switch>
+    </Router>
+  );
 }

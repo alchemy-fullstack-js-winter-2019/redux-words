@@ -9,4 +9,4 @@ const mapStateToProps = (state, props) => ({
 
 export default withRouter(connect (
   mapStateToProps
-  )(Words));
+)(Words));
