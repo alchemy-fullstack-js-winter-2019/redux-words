@@ -7,13 +7,13 @@ const initialState = {
 };
 
 export default function reducer(state = initialState, action) {
-  switch (action.type) {
+  switch(action.type) {
     case UPDATE_SEARCH_TERM:
       return {
         ...state, searchTerm: action.payload };
     default:    
       return state;  
-    }
   }
+}
    
   
