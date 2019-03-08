@@ -19,6 +19,7 @@ export const getFirstWordsByTerm = (state, count) => {
 
 export const getColor = state => state.words.color;
   
+// eslint-disable-next-line no-unused-vars
 function selectorPerformance(fn) {
   const start = performance.now();
   const results = fn();
