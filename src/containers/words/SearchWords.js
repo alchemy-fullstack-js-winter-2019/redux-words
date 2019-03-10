@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { PureComponent } from 'react';
 import SearchForm from '../../components/words/SearchForm';
 import { getSearchTerm } from '../../selectors/words';
 import { updateSearchTerm } from '../../actions/words';
@@ -9,7 +10,7 @@ import qs from 'querystring'
 class SearchWords extends PureComponent {
   static propTypes = {
 
-  }
+  } 
   componentDidMount() {
     const { term } = qs.term
   }

@@ -9,9 +9,9 @@ export const getSearchTerm = state => state.words.searchTerm;
 
 export const getFirstWordsByTerm = (state, count) => {
   const searchTerm = getSearchTerm(state);
-  return getSubWords(getWords(state).filter(word => {
+  return getSubWords(getWords(state)).filter(word => {
     return word.includes(searchTerm);
-  }), count);
+  }).slice(0, count);
 };
 
 function selectorPerformance(fn) {
