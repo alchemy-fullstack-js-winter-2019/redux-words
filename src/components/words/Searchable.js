@@ -7,7 +7,7 @@ function Searchable() {
   return (
     <>
     <SearchWords />
-    <TopWords />
+    <TopWords  />
     </>  
   );
 }

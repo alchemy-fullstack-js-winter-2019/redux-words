@@ -2,7 +2,8 @@ const getSubWords = (arr, count) => arr.slice(0, count);
 
 export const getWords = state => state.words.dictionary;
 
-export const getFirstWords = (state, count) => { return getWords(state).slice(0, count);
+export const getFirstWords = (state, count) => { 
+  return getSubWords(getWords(state)).slice(0, count);
 };
 
 export const getSearchTerm = state => state.words.searchTerm;
@@ -14,6 +15,7 @@ export const getFirstWordsByTerm = (state, count) => {
   }).slice(0, count);
 };
 
+// eslint-disable-next-line no-unused-vars
 function selectorPerformance(fn) {
   const start = performance.now();
   const results = fn();
@@ -21,6 +23,7 @@ function selectorPerformance(fn) {
   return results;
 }
 
+// eslint-disable-next-line no-unused-vars
 function badSelector(words, searchTerm) {
   const filtered = [];
   for(let j = 0; j < words.length; j++) {

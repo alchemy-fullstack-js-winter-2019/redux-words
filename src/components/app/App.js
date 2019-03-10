@@ -4,9 +4,9 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
-
-import TopWords from '../../containers/words/TopWords' ; 
+import TopWords from '../../containers/words/TopWords';
 import Searchable from '../words/Searchable';
+
 
 export default function App() {
   return ( 
