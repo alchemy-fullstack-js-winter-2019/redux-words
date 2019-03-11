@@ -2,6 +2,7 @@
 export function selectorPerformance(fn) {
     const start = performance.now();
     const results = fn();
+    // eslint-disable-next-line no-console
     console.log('PERFORMANCE', performance.now() - start);
     return results;
 }
